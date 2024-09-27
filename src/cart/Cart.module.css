@@ -1,0 +1,23 @@
+
+
+.cartCard{
+    height: 250px;
+    width: 350px;
+
+    margin-top: 30px;
+
+    background-color: white;
+}
+
+.title {
+    margin: 0px;
+    color: hsl(14, 86%, 42%);
+}
+
+.emptyImg {
+    margin-left: 100px;
+}
+
+.text {
+    margin-left: 50px;
+}

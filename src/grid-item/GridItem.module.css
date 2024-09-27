@@ -1,0 +1,60 @@
+
+.gridItem {
+    height: 300px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+.productImg {
+    height: 75%;
+    width: auto;
+
+    border-radius: 5px;
+}
+
+.buttonAdd {
+    transform: translate(50%, -50%);
+    width: 50%;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+    border: solid black 1px;
+    border-radius: 25px;
+
+    background-color: white;
+    background-image: url('../assets/icon-add-to-cart.svg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.text{
+    margin: 0px;
+    margin-top: 4px;
+}
+
+#desertType{
+    font-size: 0.8rem;
+    color: hsl(7, 20%, 60%);
+    margin-top: 0px;
+}
+
+#desertFlavor{
+    font-weight: 600;
+}
+
+#price{
+    font-size: 0.9rem;
+    color: hsl(14, 86%, 42%);
+}
