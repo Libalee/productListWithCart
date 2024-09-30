@@ -10,7 +10,7 @@
 }
 
 .title {
-    margin: 0px;
+    margin: 20px;
     color: hsl(14, 86%, 42%);
 }
 
@@ -19,5 +19,17 @@
 }
 
 .text {
-    margin-left: 50px;
+    margin-left: 19%;
+    margin-right: 22%;
+    font-size: 0.8rem;
+
+    color: hsl(12, 20%, 44%);
+}
+
+.list {
+        font-size: 0.8rem;
+}
+
+.hidden {
+    display: none;
 }
