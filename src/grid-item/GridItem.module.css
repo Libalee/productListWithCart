@@ -17,7 +17,7 @@
     border-radius: 5px;
 }
 
-.buttonAdd {
+.buttonFirstAdd {
     transform: translate(50%, -50%);
     width: 50%;
 
@@ -39,6 +39,53 @@
     cursor: pointer;
 }
 
+
+.countButton {
+    transform: translate(50%, -50%);
+    width: 50%;
+
+    color: white;
+    text-align: center;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border: solid black 1px;
+    border-radius: 25px;
+
+    background-color: hsl(14, 86%, 42%);
+}
+
+.buttonRemove, .buttonAdd {
+    width: 22px;
+    height: 22px;
+
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+
+    border: solid white 1px;
+    border-radius: 100%;
+
+    background-color: hsl(14, 86%, 42%);
+}
+
+.buttonRemove{
+    transform: translate(-340%, -90%);
+}
+
+.buttonAdd {
+    padding: 0px;
+
+    transform: translate(135%, -90%);
+}
+
+.buttonRemove:hover, .buttonAdd:hover {
+    background-color: white;
+    color: hsl(14, 86%, 42%);
+    cursor: pointer;
+}
+
 .text{
     margin: 0px;
     margin-top: 4px;
@@ -57,4 +104,8 @@
 #price{
     font-size: 0.9rem;
     color: hsl(14, 86%, 42%);
+}
+
+.hidden {
+    display: none;
 }

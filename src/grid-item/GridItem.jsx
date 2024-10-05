@@ -4,14 +4,30 @@ function GridItem(props) {
 
     const addToCart = props.addToCart;
     const removeFromCart = props.removeFromCart;
+    const countDes = props.countDessert;
 
     return(
         <div className={styles.gridItem}>
-            <img className={styles.productImg} src={props.img} alt={props.desertFlavor} />
-            <button onClick={() => addToCart(props.desertFlavor)} className={styles.buttonAdd}>Add to Cart</button>
-            <button onClick={() => removeFromCart(props.desertFlavor)} className={styles.buttonAdd}>Remove From Cart</button>
-            <p className={styles.text} id={styles.desertType}>{props.desertType}</p>
-            <p className={styles.text} id={styles.desertFlavor}>{props.desertFlavor}</p>
+            <img className={styles.productImg} src={props.img} alt={props.dessertFlavor} />
+
+            <div>
+                <button className={countDes(props.dessertFlavor) === 0 ? styles.hidden :styles.countButton}>
+                    {countDes(props.dessertFlavor)}
+                </button>
+
+                <button onClick={() => addToCart(props.dessertFlavor)} 
+                className={countDes(props.dessertFlavor) === 0 ? styles.buttonFirstAdd : styles.buttonAdd}>
+                    {countDes(props.dessertFlavor) === 0 ? 'Add to Cart' : '+'}
+                </button>
+
+                <button onClick={() => removeFromCart(props.dessertFlavor)} 
+                className={countDes(props.dessertFlavor) === 0 ? styles.hidden : styles.buttonRemove}>
+                    &minus;
+                </button>
+            </div>
+  
+            <p className={styles.text} id={styles.dessertType}>{props.dessertType}</p>
+            <p className={styles.text} id={styles.dessertFlavor}>{props.dessertFlavor}</p>
             <p className={styles.text} id={styles.price}>${props.price}</p>
         </div>
     )

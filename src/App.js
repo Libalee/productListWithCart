@@ -3,12 +3,13 @@ import './App.css';
 import Grid from './grid/Grid.jsx';
 import Cart from './cart/Cart.jsx';
 
+
 function App() {
 
   const [desserts, setDesserts] = useState([]);
 
-    function handleAddedDessert(newDessert) {
-        setDesserts(d => [...d, newDessert]);
+  function handleAddedDessert(newDessert) {
+      setDesserts(d => [...d, newDessert]);
     }
 
   function addToCart(dessert) {
@@ -24,10 +25,15 @@ function App() {
     handleRemoveDessert(dessert);
   }
 
+  function countDessert(dessert) {
+    let i = 0;
+    desserts.forEach(d => d === dessert ? i++ : null);
+    return i;
+  }
   
   return (
     <div className="App">
-      < Grid funcAddCart={addToCart} funcRemoveCart={removeFromCart}/>
+      < Grid funcAddCart={addToCart} funcRemoveCart={removeFromCart} funcCountDes={countDessert}/>
       < Cart desserts={desserts}/>
     </div>
   );
