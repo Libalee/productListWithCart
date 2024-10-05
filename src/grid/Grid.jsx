@@ -21,19 +21,28 @@ function Grid(props) {
 
             <div className={styles.column}>
                 <div className={styles.line}>
-                < GridItem img={ImageWaffle} desertType='Waffle' desertFlavor='Waffle with Berries' price='6.50' addToCart={props.funcAddCart}/>
-                < GridItem img={ImageCremeBrulee} desertType='Crème Brûlée' desertFlavor='Vanilla Bean Crème Brûlées' price='7.00' addToCart={props.funcAddCart}/>
-                < GridItem img={ImageMacaron} desertType='Macaron' desertFlavor='Macaron Mix of Five' price='8.00' addToCart={props.funcAddCart}/>
+                < GridItem img={ImageWaffle} desertType='Waffle' desertFlavor='Waffle with Berries' price='6.50' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
+                < GridItem img={ImageCremeBrulee} desertType='Crème Brûlée' desertFlavor='Vanilla Bean Crème Brûlées' price='7.00' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
+                < GridItem img={ImageMacaron} desertType='Macaron' desertFlavor='Macaron Mix of Five' price='8.00' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
                 </div>
                 <div className={styles.line}>
-                < GridItem img={ImageTiramisu} desertType='Tiramisu' desertFlavor='Classic Tiramisu' price='5.50' addToCart={props.funcAddCart}/>
-                < GridItem img={ImageBaklava} desertType='Baklava' desertFlavor='Pistachio Baklava' price='4.00' addToCart={props.funcAddCart}/>
-                < GridItem img={ImageMeringue} desertType='Pie' desertFlavor='Lemon Meringue Pie' price='5.00' addToCart={props.funcAddCart}/>
+                < GridItem img={ImageTiramisu} desertType='Tiramisu' desertFlavor='Classic Tiramisu' price='5.50' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
+                < GridItem img={ImageBaklava} desertType='Baklava' desertFlavor='Pistachio Baklava' price='4.00' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
+                < GridItem img={ImageMeringue} desertType='Pie' desertFlavor='Lemon Meringue Pie' price='5.00' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
                 </div>
                 <div className={styles.line}>
-                < GridItem img={ImageCake} desertType='Cake' desertFlavor='Red Vevelt Cake' price='4.50' addToCart={props.funcAddCart}/>
-                < GridItem img={ImageBrownie} desertType='Brownie' desertFlavor='Salted Caramel Brownie' price='5.50' addToCart={props.funcAddCart}/>
-                < GridItem img={ImagePannaCotta} desertType='Panna Cotta' desertFlavor='Vanilla Panna Cotta' price='6.50' addToCart={props.funcAddCart}/>
+                < GridItem img={ImageCake} desertType='Cake' desertFlavor='Red Vevelt Cake' price='4.50' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
+                < GridItem img={ImageBrownie} desertType='Brownie' desertFlavor='Salted Caramel Brownie' price='5.50' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
+                < GridItem img={ImagePannaCotta} desertType='Panna Cotta' desertFlavor='Vanilla Panna Cotta' price='6.50' 
+                addToCart={props.funcAddCart} removeFromCart={props.funcRemoveCart}/>
                 </div>
             </div>
         </ div>

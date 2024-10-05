@@ -14,10 +14,20 @@ function App() {
   function addToCart(dessert) {
     handleAddedDessert(dessert);
   }
+
+  function handleRemoveDessert(RemoevDessert) {
+    const index = desserts.indexOf(RemoevDessert);
+    setDesserts(desserts.filter((_, i) => i !== index));
+  }
+
+  function removeFromCart(dessert) {
+    handleRemoveDessert(dessert);
+  }
+
   
   return (
     <div className="App">
-      < Grid funcAddCart={addToCart}/>
+      < Grid funcAddCart={addToCart} funcRemoveCart={removeFromCart}/>
       < Cart desserts={desserts}/>
     </div>
   );
