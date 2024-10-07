@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       < Grid funcAddCart={addToCart} funcRemoveCart={removeFromCart} funcCountDes={countDessert}/>
-      < Cart desserts={desserts}/>
+      < Cart desserts={desserts} funcCountDes={countDessert}/>
     </div>
   );
 }

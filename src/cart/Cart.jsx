@@ -5,19 +5,26 @@ import illustrationEmpty from '../assets/illustration-empty-cart.svg';
 function Cart(props) {
 
     const dessertList = props.desserts;
+    const countDessert = props.funcCountDes;
+    // For dessert types that are in the dessertList
+    let dessertListSingle = [];
+    // Adding desserts to the dessertListSingle
+    dessertList.forEach(d => dessertListSingle.includes(d) ? null : dessertListSingle.push(d));
 
     function isCartEmpty() {
         return dessertList.length === 0;
     }
 
-    function cartUpdater () {
-
+    function totalAmountDesserts() {
+        let i = 0
+        dessertList.forEach(d => i++);
+        return i;
     }
 
     return(
         <div className={styles.cartCard}>
             <h2 className={styles.title}>
-                Your Cart
+                Your Cart ({totalAmountDesserts()})
             </h2>
 
             <div className={isCartEmpty() ? '' : styles.hidden}>
@@ -28,8 +35,8 @@ function Cart(props) {
                 </p>
             </div>
 
-            <ul onChange={cartUpdater()} className={isCartEmpty() ? styles.hidden : styles.list}>
-                {dessertList.map((dessert, index) => <li key={index}> {dessert} </li>)}
+            <ul className={isCartEmpty() ? styles.hidden : styles.list}>
+                {dessertListSingle.map((dessert, index) => <li key={index}> {dessert} {countDessert(dessert)} </li>)}
             </ul>
         </div>
     )
