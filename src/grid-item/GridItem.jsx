@@ -15,7 +15,7 @@ function GridItem(props) {
                     {countDes(props.dessertFlavor)}
                 </button>
 
-                <button onClick={() => addToCart(props.dessertFlavor)} 
+                <button onClick={() => addToCart(props.dessertFlavor, props.price)} 
                 className={countDes(props.dessertFlavor) === 0 ? styles.buttonFirstAdd : styles.buttonAdd}>
                     {countDes(props.dessertFlavor) === 0 ? 'Add to Cart' : '+'}
                 </button>

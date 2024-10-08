@@ -8,17 +8,32 @@ function App() {
 
   const [desserts, setDesserts] = useState([]);
 
+
   function handleAddedDessert(newDessert) {
       setDesserts(d => [...d, newDessert]);
     }
 
-  function addToCart(dessert) {
-    handleAddedDessert(dessert);
+  function addToCart(dessert, price) {
+    handleAddedDessert(
+      {
+        dessertType: dessert,
+        dessertPrice: price
+      }
+    );
   }
 
-  function handleRemoveDessert(RemoevDessert) {
-    const index = desserts.indexOf(RemoevDessert);
-    setDesserts(desserts.filter((_, i) => i !== index));
+  function handleRemoveAllDesserts(removeDessert) {
+    setDesserts(desserts.filter((d, _) => d.dessertType !== removeDessert));
+  }
+
+  function handleRemoveDessert(removeDessert) {
+    let toBeRemoved = desserts.find((d) => d.dessertType === removeDessert);
+    setDesserts(desserts.filter((d, _) => d !== toBeRemoved));
+
+  }
+
+  function removeAllFromCart(dessert) {
+    handleRemoveAllDesserts(dessert);
   }
 
   function removeFromCart(dessert) {
@@ -27,14 +42,23 @@ function App() {
 
   function countDessert(dessert) {
     let i = 0;
-    desserts.forEach(d => d === dessert ? i++ : null);
+    desserts.forEach(d => d.dessertType === dessert ? i++ : null);
     return i;
   }
+
+  function containsDessert(obj, list) {
+    for(let i = 0; i < list.length; i++) {
+        if(obj.dessertType === list[i].dessertType) {
+            return true;
+        };
+    };
+    return false;
+}
   
   return (
     <div className="App">
       < Grid funcAddCart={addToCart} funcRemoveCart={removeFromCart} funcCountDes={countDessert}/>
-      < Cart desserts={desserts} funcCountDes={countDessert}/>
+      < Cart desserts={desserts} funcCountDes={countDessert} funcContainDes={containsDessert} funcRemoveAllCart={removeAllFromCart}/>
     </div>
   );
 }
