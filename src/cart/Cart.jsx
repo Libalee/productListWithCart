@@ -60,7 +60,10 @@ function Cart(props) {
                 </div></li>)}
             </ul>
 
-            Order Total ${calculateTotal()}
+            <div className={isCartEmpty() ? styles.hidden : styles.orderTotal}>
+                <p className={styles.orderTotalText}>Order Total</p>
+                <p className={styles.orderTotalNumber}>${calculateTotal()}</p>
+            </div>
         </div>
     )
 }
